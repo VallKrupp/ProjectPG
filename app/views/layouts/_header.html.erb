@@ -1,0 +1,13 @@
+    <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-red border-bottom shadow-sm">
+     <%= link_to "Project", root_path, id: "logo" %>
+
+    <nav class="nav nav-masthead justify-content-center fload-md-end">
+      <% if current_user %>
+         <%= link_to current_user.email, edit_user_registration_path %>
+         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <% else %>
+         <%= link_to "Log in", new_user_session_path, class: "nav-link active" %>
+         <%= link_to "Register", new_user_registration_path, class: "nav-link active" %>
+      <% end %>
+    </nav>
+    </header>
