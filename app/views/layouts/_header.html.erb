@@ -1,33 +1,41 @@
-    <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-red border-bottom shadow-sm">
-     <%= link_to "Project", root_path, id: "logo" %>
-
-    <nav class="nav nav-masthead justify-content-center fload-md-end">
-      <%= link_to root_path, class: "nav-link #{'active' if current_page?(root_path)}" do %>
-      <div class="fa fa-home"></div>
-      Home
-      <% end %>
-      <%= link_to "Log out",destroy_user_session_path, method: :delete %>
-      <ul class="navbar-nav ms-auto">
-        <% if current_user %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <b><%= current_user.email %></b>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-              <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
-                <i class="fa fa-cog"></i>
-                <b>Account settings</b>
-              <% end %>
-              <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-                <i class="fa fa-sign-out-alt"></i>
-                <b>Sign out</b>
-              <% end %>
-            </ul>
-          </li>
-      <% else %>
-         <%= link_to "Log in", new_user_session_path, class: "nav-link active" %>
-         <%= link_to "Register", new_user_registration_path, class: "nav-link active" %>
-      <% end %>
-    </nav>
-    
-    </header>
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-red border-bottom shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light nav-masthead justify-content-center fload-md-end">
+    <div class="container-fluid">
+     <%= link_to "My project", root_path, id: "logo" %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <%= link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
+            <div class="fa fa-home"></div>
+            Home
+          <% end %>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <% if current_user %>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="fa fa-user"></div>
+                <b><%= current_user.email %></b>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
+                  <div class="fa fa-cog"></div>
+                  <b>Account settings</b>
+                <% end %>
+                <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+                  <div class="fa fa-sign-out-alt"></div>
+                  <b>Sign out</b>
+                <% end %>
+              </ul>
+            </li>
+          <% else %>
+            <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-primary btnHeader" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btnHeader" %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+</header>
