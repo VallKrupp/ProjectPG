@@ -2,16 +2,32 @@
      <%= link_to "Project", root_path, id: "logo" %>
 
     <nav class="nav nav-masthead justify-content-center fload-md-end">
-      <% if current_user %>
-         <%= link_to current_user.email, edit_user_registration_path %>
-         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      <% else %>
       <%= link_to root_path, class: "nav-link #{'active' if current_page?(root_path)}" do %>
       <div class="fa fa-home"></div>
       Home
       <% end %>
+      <%= link_to "Log out",destroy_user_session_path, method: :delete %>
+      <ul class="navbar-nav ms-auto">
+        <% if current_user %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <b><%= current_user.email %></b>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+              <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+                <i class="fa fa-cog"></i>
+                <b>Account settings</b>
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+                <i class="fa fa-sign-out-alt"></i>
+                <b>Sign out</b>
+              <% end %>
+            </ul>
+          </li>
+      <% else %>
          <%= link_to "Log in", new_user_session_path, class: "nav-link active" %>
          <%= link_to "Register", new_user_registration_path, class: "nav-link active" %>
       <% end %>
     </nav>
+    
     </header>
