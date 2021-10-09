@@ -3,13 +3,17 @@
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <%= link_to "Project", root_path, id: "logo" %>
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <ul class="navbar-nav me-auto nav-masthead">
-          <%= link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 nav-masthead justify-content-center mb-md-0">
+          <li><%= link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
             <div class="fa fa-home"></div>
             Home
-          <% end %>
-        </ul>
+          <% end %></li>
+            <% if current_user %>
+              <li><%= link_to users_path, class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do %>
+                <div class="fa fa-users"></div>
+                Users
+              <% end %></li>
+            <% end %>
         </ul>
 <!-- что-то вроде строки для поиска, который потом подойдёт, который переделаю как только так сразу -->
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
