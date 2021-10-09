@@ -32,5 +32,5 @@ class User < ApplicationRecord
       email
     end
   end
-  
+
 end

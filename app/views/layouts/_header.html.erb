@@ -1,26 +1,33 @@
-<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-red border-bottom shadow-sm">
-  <nav class="navbar navbar-expand-lg navbar-light nav-masthead justify-content-center fload-md-end">
-    <div class="container-fluid">
-     <%= link_to "My project", root_path, id: "logo" %>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <%= link_to "Project", root_path, id: "logo" %>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <ul class="navbar-nav me-auto nav-masthead">
           <%= link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
             <div class="fa fa-home"></div>
             Home
           <% end %>
         </ul>
-        <ul class="navbar-nav ms-auto">
+        </ul>
+<!-- что-то вроде строки для поиска, который потом подойдёт, который переделаю как только так сразу -->
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search" style="margin-bottom: 0px;">
+        </form>
+
+          <ul class="navbar-nav ms-auto nav-masthead">
           <% if current_user %>
             <li class="nav-item dropdown ">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <% if current_user.image? %>
+                <%= image_tag current_user.image, size: "30x30", class: "rounded-circle" %>
+              <% else %>
                 <div class="fa fa-user"></div>
-                
+              <% end %>
                 <b><%= current_user.username %></b>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
                 <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
                   <div class="fa fa-cog"></div>
                   <b>Account settings</b>
@@ -30,13 +37,14 @@
                   <b>Sign out</b>
                 <% end %>
               </ul>
-            </li>
-          <% else %>
-            <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-primary btnHeader" %>
-            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btnHeader" %>
-          <% end %>
-        </ul>
+              </li>
+            </ul>
+        <% else %>
+        <div class="text-end">
+          <%= link_to "Log in", new_user_session_path, class:"btn btn-outline-light me-2" %>
+          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-warning" %>
+        </div>
+        <% end %>
       </div>
     </div>
-  </nav> 
-</header>
+  </header>
