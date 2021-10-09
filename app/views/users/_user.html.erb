@@ -1,13 +1,7 @@
-<% provide(:title, "List of Users") %>
-
-<p> 
-  users:
-  <%= @users.length %>
-</p>
-  <li>
-    <div class="Stripes">
-    <%= user.id %>
-    <%= user.name %>
-    <%=link_to user.email, user %>
-    </div>
-  </li>
+<li>
+  <div class="Stripes">
+  <%= user.id %>
+  <%= user.name %>
+  <%=link_to user.email, user %>
+  </div>
+</li>
