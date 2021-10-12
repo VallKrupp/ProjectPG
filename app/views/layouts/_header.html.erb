@@ -13,6 +13,10 @@
                 <div class="fa fa-users"></div>
                 Users
               <% end %></li>
+              <li><%= link_to "#", class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do %>
+                <div class="fa fa-tasks"></div>
+                Create Task
+              <% end %></li>
             <% end %>
         </ul>
 <!-- что-то вроде строки для поиска, который потом подойдёт, который переделаю как только так сразу -->
@@ -20,7 +24,7 @@
           <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search" style="margin-bottom: 0px;">
         </form>
 
-          <ul class="navbar-nav ms-auto nav-masthead">
+          <ul class="navbar-nav nav-masthead">
           <% if current_user %>
             <li class="nav-item dropdown ">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

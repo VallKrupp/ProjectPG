@@ -71,6 +71,7 @@ index-link {
   background-color: transparent;
   border-bottom: .25rem solid transparent;
   margin-bottom: 0.25rem;
+  margin-left: 1rem;
 }
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
@@ -130,34 +131,33 @@ aside {
   margin:1rem;
   margin-left: 0rem;
 }
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #ccd0d5;
-  background: #f5f6f7;
-  border-radius: 5px;
+  border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
 }
+
+input {
+  height: auto !important;
+}
+
 .checkbox {
-  margin-top: 10px;
+  margin-top: -10px;
   margin-bottom: 10px;
   span {
     margin-left: 20px;
     font-weight: normal;
   }
-  .checkbox-inline{
-    text-align: center;
-  }
 }
-.avatar-form{
-  margin: 5px;
-  margin-left: 0px;
-}
+
 #session_remember_me {
   width: auto;
   margin-left: 0;
 }
+
 
 input {
   height: auto !important;

@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: d369a567f96f164cc3664263a3b9673696a3469d
+  branch: master
+  specs:
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
+
+GIT
   remote: https://github.com/omniauth/omniauth-github.git
   revision: 1f772263c6cc00e84dabbc02beb755ba4c95f7d1
   branch: master
@@ -172,6 +180,7 @@ GEM
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
+    pagy (3.11.0)
     pg (1.2.3)
     public_suffix (4.0.6)
     puma (5.5.0)
@@ -285,11 +294,13 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
+  faker!
   jbuilder (~> 2.7)
   listen (~> 3.3)
   omniauth-github!
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
+  pagy (~> 3.5)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
@@ -302,7 +313,6 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
-  will_paginate (= 3.3.0)
 
 RUBY VERSION
    ruby 3.0.2p107
