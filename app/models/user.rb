@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable,
          :omniauthable, omniauth_providers: [:google_oauth2, :github] 
 
+  has_many :tasks, dependent: :restrict_with_error
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: access_token.info.email).first
