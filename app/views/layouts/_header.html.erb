@@ -13,7 +13,7 @@
                 <div class="fa fa-users"></div>
                 Users
               <% end %></li>
-              <li><%= link_to "#", class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do %>
+              <li><%= link_to tasks_path, class: "nav-link #{'active fw-bold' if current_page?(tasks_path)}" do %>
                 <div class="fa fa-tasks"></div>
                 Create Task
               <% end %></li>
