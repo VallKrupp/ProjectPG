@@ -35,7 +35,11 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
+gem 'ransack'
+
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master', group: :development
+
+gem "redcarpet"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -4,7 +4,7 @@
 
   <%= simple_format(task.body) %>
 
-On <%= task.created_at.strftime('%d %b %Y') %>
+On <%= task.created_at.strftime('%d %m %Y') %>
 By <%= link_to task.user.username, task.user %>
 
 <br>

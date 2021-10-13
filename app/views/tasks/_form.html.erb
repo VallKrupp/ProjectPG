@@ -16,7 +16,12 @@
       <%= form.text_field :title, class: 'form-control' %>
 
       <%= form.label :body %>
-      <%= form.text_area :body, class: 'form-control' %>
+      <%= form.text_area :body, 
+      style: "width: 100%",
+      rows: 8,
+      maxlenght: 2000,
+      placeholder: 'Field for a task body',
+      class: 'form-control' %>
 
     <div class="actions">
       <%= form.submit "Create task", class: "btn btn-primary" %>
