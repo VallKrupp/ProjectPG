@@ -1,0 +1,13 @@
+<h2>
+  <%= task.title%>
+</h2>
+
+  <%= simple_format(task.body) %>
+
+On <%= task.created_at.strftime('%d %b %Y') %>
+By <%= link_to task.user.username, task.user %>
+
+<br>
+
+<%= link_to 'Edit', edit_task_path(task), class: "btn btn-primary" %>
+<%= link_to 'Destroy', task, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
