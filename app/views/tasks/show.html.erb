@@ -7,13 +7,12 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @task.body %>
+  <%= simple_format(@task.body) %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @task.user_id %>
+  <%= link_to @task.user.username, @task.user %>
 </p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Edit', edit_task_path(@task), class: "btn btn-primary" %>
