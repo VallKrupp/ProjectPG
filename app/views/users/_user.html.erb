@@ -1,7 +1,13 @@
 <li>
   <div class="Stripes">
-  <%= user.id %>
+  <%= 'Name'.humanize %>:
   <%= user.name %>
+  <br>
+  <%= 'Email'.humanize %>:
   <%=link_to user.email, user %>
+  <br>
+  <b><%= 'tasks_count'.humanize %>:</b>
+  <%= user.tasks_count %>
+  <br>  
   </div>
 </li>

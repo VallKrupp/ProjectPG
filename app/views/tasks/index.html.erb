@@ -1,11 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Tasks</h1>
-
+<h2>
+  Tasks:
+  <%= Task.count %>
+</h2>
+  <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+  <br>
   <% @tasks.each do |task| %>
   <%= render 'tasks/task', task: task %>
   <hr>
   <% end %>
+
+  <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 <br>
 
 <%= link_to 'New Task', new_task_path , class: "btn btn-primary" %>
