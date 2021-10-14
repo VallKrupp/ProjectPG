@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_task, only: %i[ show edit update destroy ]
 
   def index
@@ -6,6 +7,7 @@ class TasksController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -13,6 +15,9 @@ class TasksController < ApplicationController
   end
 
   def edit
+    unless @task.user === current_user
+      redirect_to tasks_path, alert: "You shold be authorized"
+    end
   end
 
   def create
@@ -26,17 +31,25 @@ class TasksController < ApplicationController
     end
 
   def update
+    unless @task.user === current_user
+      redirect_to tasks_path, alert: "You shold be authorized"
+    else
       if @task.update(task_params)
         redirect_to @task, notice: "Task was successfully updated." 
       else
         render :edit, status: :unprocessable_entity 
       end
     end
+  end
 
   def destroy
-    @task.destroy
+    if @task.user === current_user
+      @task.destroy
       redirect_to tasks_url, notice: "Task was successfully destroyed." 
+    else
+      redirect_to tasks_path, alert: "You shold be authorized"
   end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.
