@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :tasks, dependent: :restrict_with_error
 
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: access_token.info.email).first

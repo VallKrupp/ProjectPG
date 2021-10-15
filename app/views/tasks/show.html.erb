@@ -7,7 +7,12 @@
 
 <p>
   <strong>Body:</strong>
-  <%= markdown(@task.body) %>
+  <%= @task.body %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= render 'shared/answer' %>
 </p>
 
 <p>
