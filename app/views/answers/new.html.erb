@@ -1,6 +1,11 @@
-<p>Write a correct answer to you're task</p>
-<%= form_for(@answer) do |f| %>
-  <div class="field">
-    <%= f.text_area :body, placeholder: "Write a correct answer to you're task" %>
+<h1>Write a correct answer to you're task</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@answer) do |f| %>
+      <div class="field">
+        <%= f.text_field :body, placeholder: "Write a correct answer to you're task", class: 'form-control' %>
+      </div>
+      <%= f.submit "Add", class: "btn btn-primary" %>
+    <% end %>
   </div>
-<% end %>
+</div>
