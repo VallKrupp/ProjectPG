@@ -1,8 +1,8 @@
 <h2>
-  <%= task.title%>
+  <%= link_to_unless_current task.title, task %>
 </h2>
 
-  <%= simple_format(task.body) %>
+  <%= markdown(task.body) %>
 
 On <%= task.created_at.strftime('%d %m %Y') %>
 By <%= link_to task.user.username, task.user %>

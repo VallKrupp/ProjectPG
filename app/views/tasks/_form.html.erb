@@ -23,6 +23,8 @@
       placeholder: 'Field for a task body',
       class: 'form-control' %>
 
+    <%= link_to "Add an answer", answers_path, class: "btn btn-primary" %>
+
     <div class="actions">
       <%= form.submit "Create task", class: "btn btn-primary" %>
     </div>
