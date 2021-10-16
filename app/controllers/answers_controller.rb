@@ -4,8 +4,14 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
+  def edit
+    unless @answer.task === current_task
+      redirect_to answer_path, alert: "You shold be authorized"
+    end
+  end
+
   def create
-    @answer = Answer.new(answer_params)
+    @answer = current_task.answers.build(answer_params)
     if @answer.save
       flash[:success] = "Correct answer is added"
       redirect_to root_url

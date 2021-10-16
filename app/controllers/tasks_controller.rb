@@ -51,6 +51,10 @@ class TasksController < ApplicationController
   end
 end
 
+def current_task
+  Task.find_by(id: session[:task_id])
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
