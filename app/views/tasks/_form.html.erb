@@ -15,16 +15,25 @@
       <%= form.label :title %>
       <%= form.text_field :title, class: 'form-control' %>
 
+    <%= form.text_field :titleinput type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search" style="margin-bottom: 0px;" %>
+
+      <div class="field">
       <%= form.label :body %>
       <%= form.text_area :body, 
       style: "width: 100%",
       rows: 8,
       maxlenght: 2000,
-      placeholder: 'Field for a task body',
+      placeholder: 'Write a task',
       class: 'form-control' %>
 
-    <%= link_to "Add an answer", answers_path, class: "btn btn-primary" %>
-
+      <% if current_task%> 
+        <%= link_to new_answer_path, class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do %>
+        <div class="fa fa-plus"></div>
+          Add an answer
+        <% end %>
+      <% end %>
+    </div>
+    
     <div class="actions">
       <%= form.submit "Create task", class: "btn btn-primary" %>
     </div>

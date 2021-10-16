@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
 
   def index
-    @pagy, @tasks = pagy(Task.all)
+    @q = Task.ransack(params[:q])
+    @pagy, @tasks = pagy(@q.result(distinct: true))
   end
 
   def show
@@ -49,7 +50,10 @@ class TasksController < ApplicationController
     else
       redirect_to tasks_path, alert: "You shold be authorized"
   end
+  
 end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
