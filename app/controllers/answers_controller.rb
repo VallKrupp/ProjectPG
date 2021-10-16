@@ -11,7 +11,8 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = current_task.answers.build(answer_params)
+    @answer = Answer.new(answer_params)
+    @answer .task = current_task
     if @answer.save
       flash[:success] = "Correct answer is added"
       redirect_to root_url

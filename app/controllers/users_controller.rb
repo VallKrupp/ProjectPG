@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def index
     @q = User.ransack(params[:q])
     @pagy, @users = pagy(@q.result(distinct: true))
-    @pagy, @users= pagy(User.all)
   end
 
   def show
@@ -13,12 +12,12 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
-    redirect_to users_url
+    redirect_to users_path
   end
 
   private
   
     def admin_user
-     redirect_to(root_url) unless current_user.admin?
+     redirect_to(root_path) unless current_user.admin?
     end
 end
