@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: %i[destroy]
+
   def index
     @q = User.ransack(params[:q])
     @pagy, @users = pagy(@q.result(distinct: true))
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
-    redirect_to users_path
+    redirect_to users_url
   end
 
   private
