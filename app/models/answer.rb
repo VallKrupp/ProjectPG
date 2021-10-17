@@ -1,5 +1,5 @@
 class Answer < ApplicationRecord
-  belongs_to :task
+  references :task, counter_cache: true
 
   validates :body, presence: true, length: { maximum: 50 }
   

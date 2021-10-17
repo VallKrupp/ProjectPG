@@ -1,0 +1,8 @@
+<tbody>
+    <% @answer.each do |answer| %>
+      <tr>
+        <td><%= answer.body %></td>
+        <td><%= answer.task_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
