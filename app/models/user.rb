@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2, :github] 
 
   has_many :tasks, dependent: :restrict_with_error
-  has_many :answers
+  has_many :answers, dependent: :restrict_with_error
 
   def self.from_omniauth(access_token)
     data = access_token.info
