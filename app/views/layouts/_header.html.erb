@@ -12,12 +12,6 @@
                 <div class="fa fa-tasks"></div>
                 Tasks
               <% end %></li>
-
-              <li><%= link_to answers_path, class: "nav-link #{'active fw-bold' if current_page?(answers_path)}" do %>
-                <div class="fa fa-answer"></div>
-                Answers
-              <% end %></li>
-
             <% if current_user%>
               <li>
                 <%= link_to users_path, class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do %>

@@ -5,18 +5,11 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
-
-  def index
-    @answer = Answer.all
-  end
-
   def edit
-
   end
 
   def create
     @answer = Answer.new(answer_params)
-    @answer
     if @answer.save
       flash[:success] = "Correct answer is added"
       redirect_to tasks_url
