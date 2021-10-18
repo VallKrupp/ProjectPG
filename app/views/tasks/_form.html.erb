@@ -23,10 +23,11 @@
       placeholder: 'Write a task',
       class: 'form-control' %>
 
-        <%= link_to new_answer_path, class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do %>
+        <%= link_to '#', class: "nav-link #{'active fw-bold' if current_page?()}" do %>
         <div class="fa fa-plus"></div>
-          Add an answer (sorry this problem is not solved...yet ) ¯\_(ツ)_/¯
+          Add an answer
         <% end %>
+        <p>(sorry this problem is not solved...yet ) ¯\_(ツ)_/¯</p>
     </div>
     
     <div class="actions">

@@ -6,17 +6,7 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    
-  end
 
-  def create
-    @answer = Answer.new(answer_params)
-    if @answer.save
-      flash[:success] = "Correct answer is added"
-      redirect_to tasks_url
-    else
-      render :new, status: :unprocessable_entity 
-    end
   end
 
   private
