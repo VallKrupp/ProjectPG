@@ -3,7 +3,7 @@
  <div class="container">
         <div class="row">
             <div class="col-6 chart">
-            <%= pie_chart Users.group(:provider).count %>
+            <%= pie_chart User.group(:provider).count, donut: true, legend:"left" %>
             </div>
           <p>MYAW :3</p>
           <i class="fas fa-cat fa-3x" ></i>
