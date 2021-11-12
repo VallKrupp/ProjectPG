@@ -8,9 +8,17 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import "chartkick/chart.js"
+require ("chart.js/auto");
+import Chart from "chart.js/auto";
+global.Chart = Chart;
+
 import "bootstrap"
 import "@fortawesome/fontawesome-free/css/all"  
 import "stylesheets/application"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("custom/charts")
+

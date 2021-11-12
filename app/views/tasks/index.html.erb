@@ -10,7 +10,7 @@
   <%= search_form_for @q do |f| %>
     <%= f.search_field :title_cont, class: "form-control form-control-dark",  
     placeholder: 'Search a task...' %>
-    <%= f.submit %>
+        <%= f.submit "Search", class:"btn btn-primary" %>
   <% end %>
   <% if params[:q].present? %>
     <%= link_to tasks_path do %>
