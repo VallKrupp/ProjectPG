@@ -138,14 +138,6 @@ input {
   height: auto !important;
 }
 
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
-}
 .btn-google {
   color: #545454;
   background-color: #ffffff;
@@ -204,4 +196,20 @@ input {
   height: 24px;
   width: 24px;
   float: left;
+}
+
+.remember{
+  color: rgb(0, 0, 0);
+  }
+  
+  .remember input
+  {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  }
+.card{
+  width: 300px;
+  height: 350px;
+  text-align: center;
 }

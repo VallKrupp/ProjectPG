@@ -35,4 +35,8 @@ class User < ApplicationRecord
     end
   end
 
+  scope :user_providers, ->() do
+     group('provider').count
+  end
+
 end
