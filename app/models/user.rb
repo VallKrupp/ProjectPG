@@ -3,8 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable,
-         :omniauthable, omniauth_providers: [:google_oauth2, :github] 
-
+         :omniauthable, omniauth_providers: [:google_oauth2, :github]           
   has_many :tasks, dependent: :restrict_with_error
 
   def self.from_omniauth(access_token)
@@ -17,7 +16,7 @@ class User < ApplicationRecord
         password: Devise.friendly_token[0,20]
       )
     end
-    
+     
     user.provider = access_token.provider
     user.uid = access_token.uid
     user.name = access_token.info.name
@@ -38,5 +37,4 @@ class User < ApplicationRecord
   scope :user_providers, ->() do
      group('provider').count
   end
-
 end
