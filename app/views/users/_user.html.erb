@@ -1,5 +1,10 @@
 <li>
   <div class="Stripes">
+    <% if user.image? %>
+        <%= image_tag user.image, class: "users_list_avatar rounded-circle"%> 
+      <% else %>
+        <%= image_tag "/assets/user.png", class: "users_list_avatar" %> 
+     <% end %> 
   <%= 'Name'.humanize %>:
   <%= user.name %>
   <br>

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show destroy]
   resources :tasks
   resources :answers
+  resources :statistics
 end

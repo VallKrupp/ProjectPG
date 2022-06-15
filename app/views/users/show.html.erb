@@ -1,17 +1,20 @@
-<% provide(:title, @user.name) %>
-  <aside class="col-md-4">
+<main class="d-flex flex-nowrap"> 
+ <% provide(:title, @user.name) %>
+  <div class="d-flex flex-column flex-shrink-0  bg-white" style="width: 300px;">
       <section class="user_info-sidebar">
         <div class= "Layout-sidebar">
           <% if @user.image? %>
-                <%= image_tag @user.image %> 
+                <%= image_tag @user.image, class: "profile_avatar rounded-circle" %> 
               <% else %>
                 <%= image_tag "/assets/user.png", class: "profile_avatar" %> 
-          <% end %> 
-          
+          <% end %>
+          <br> 
           <p><span class="last-name"><%= @user.name %> </span> </p>
             <span class="separator"></span>
           <p><span class="email"><%= @user.email %> </span> </p>
-          <p><span class="registrated by"><%= @user.provider %> </span> </p>
+            <div class="actions">
+              <%= link_to 'Edit profile', edit_user_registration_path , class: "btn btn-edit-profile btn-block btn-outline" %>
+            </div>
         </div>
       </section>
-  </aside> 
+  </div>
