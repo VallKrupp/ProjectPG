@@ -26,6 +26,10 @@
                 Create Tasks
               <% end %></li>
             <% end %>
+              <li><%= link_to statistics_path, class: "nav-link #{'active fw-bold' if current_page?(statistics_path)}" do %>
+                <div class="fa-line-chart"></div>
+                Statistics
+              <% end %></li>
         </ul>
           <ul class="navbar-nav nav-masthead">
           <% if current_user %>
