@@ -1,7 +1,22 @@
 
-<div class="card-heder">
-  Registration preferences
+<div class= "container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="card">
+        <h5 class="card-title">Registration preferences</h5>
+        <div class="card-body">
+          <canvas id="doughnutChart" width="300px" height="300px" data-labels="<%= @doughnut_data_keys %>" data-data="<%= @doughnut_data_values %>" ></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <h5 class="card-title">Logins per month</h5>
+        <div class="card-body">
+          <canvas id="mixedChart" width="400px" height="200px" data-labels="<%= @mixed_data_keys %>" data-data="<%= @mixed_data_values %>" ></canvas>
+        </div>
+      </div>
+    </div>
 </div>
-<div class="card-body">
-  <canvas id="myChart" width="300px" height="300px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
-</div>
+
+ 

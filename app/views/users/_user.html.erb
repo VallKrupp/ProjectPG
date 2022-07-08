@@ -1,19 +1,23 @@
 <li>
-  <div class="Stripes">
-    <% if user.image? %>
-        <%= image_tag user.image, class: "users_list_avatar rounded-circle"%> 
-      <% else %>
-        <%= image_tag "/assets/user.png", class: "users_list_avatar" %> 
-     <% end %> 
-  <%= 'Name'.humanize %>:
-  <%= user.name %>
-  <br>
-  <%= 'Email'.humanize %>:
-  <%=link_to user.email, user %>
-  <br>
-  <b><%= 'tasks_count'.humanize %>:</b>
-  <%= user.tasks_count %>
-  <br>  
+  <div class="Сard">
+    <div class ="Сard-block">
+        <% if user.image? %>
+            <%= image_tag user.image, class: "users_list_avatar rounded-circle"%> 
+          <% else %>
+            <%= image_tag "/assets/user.png", class: "users_list_avatar rounded-circle" %> 
+        <% end %> 
+    </div>
+    <div class="Сard-block-info">     
+      <%= 'Name'.humanize %>:
+      <%= user.name %>
+      <br>
+      <%= 'Email'.humanize %>:
+      <%=link_to user.email, user %>
+      <br>
+      <b><%= 'tasks_count'.humanize %>:</b>
+      <%= user.tasks_count %>
+      <br>
+    </div>    
   </div>
   <% if current_user.admin? && !current_user?(user)  %>
     <%= link_to "destroy", user, method: :delete,

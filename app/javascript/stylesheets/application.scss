@@ -21,6 +21,25 @@ body {
 
 a { text-decoration :none; }
 
+.row_centered{
+justify-content: center;
+}
+
+/*div-ы*/
+.Сard{
+  display: flex;
+}
+.Сard-block{
+  width: 80px;
+  height: 80px;
+}
+.Card-block-info{
+  width: 500px;
+  height: 80px;
+}
+
+/*конец дивов вродебык*/
+
 .cover-container {
   max-width: 42em;
   
@@ -109,9 +128,14 @@ aside {
     }
   }
 }
+.last-name{
+  font-size: 30px;
+  margin: 0px 0px 8px;
+}
 .profile_avatar{
   height: 260px;
   margin: 10px;
+  border: 2px solid #7c7c7c;
 }
 .users_list_avatar{
   height:70px;
@@ -149,7 +173,8 @@ input {
   background-color: #ffffff;
   width: 95%;
   height: 39px;
-  box-shadow: 0 1px 2px 1px #ddd
+  box-shadow: 0 1px 2px 1px #ddd;
+  margin: 0 0 10px 0;
 }
 .btn-github {
   color: #ffffff;
@@ -158,14 +183,14 @@ input {
   height: 39px;
   box-shadow: 0 1px 2px 1px #ddd
 }
-.btn-edit-profile {
-  color: #ffffff;
-  background-color: #7e7d7d;
-  width: 100%;
-  height: 39px;
-  box-shadow: 0 1px 2px 1px rgb(136, 136, 136)
-}
 
+.btn-edit-profile {
+  width: 85%;
+  height: 25px;
+  align-items: center;
+  text-align: center;
+  padding: 0 0 0 0 ;
+}
 .or-container {
   align-items: center;
   color: #ccc;
@@ -197,11 +222,6 @@ input {
   transform: translate(-50%, -50%)
   }
 
-.row{
-  flex-direction: column;
-  align-items: center;
-}
-
 .actions {
   margin-bottom: 0.5rem;
 }
@@ -222,8 +242,4 @@ input {
   height: 20px;
   margin-right: 5px;
   }
-.card{
-  width: 300px;
-  height: 350px;
-  text-align: center;
-}
+  

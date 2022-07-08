@@ -17,10 +17,10 @@ ActiveStorage.start()
 
 
 document.addEventListener('turbolinks:load', () => {
-  var ctx = document.getElementById('myChart').getContext('2d');
+  var ctx = document.getElementById('doughnutChart').getContext('2d');
   ctx.canvas.width = 300;
   ctx.canvas.height = 300;
-  var myChart = new Chart(ctx, {
+  var doughnutChart = new Chart(ctx, {
   type: 'doughnut',
   maintainAspectRatio: true, 
   data: {

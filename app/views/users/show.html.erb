@@ -1,20 +1,40 @@
 <main class="d-flex flex-nowrap"> 
  <% provide(:title, @user.name) %>
   <div class="d-flex flex-column flex-shrink-0  bg-white" style="width: 300px;">
-      <section class="user_info-sidebar">
+      <section class="user_info-sidebar image">
         <div class= "Layout-sidebar">
-          <% if @user.image? %>
-                <%= image_tag @user.image, class: "profile_avatar rounded-circle" %> 
-              <% else %>
-                <%= image_tag "/assets/user.png", class: "profile_avatar" %> 
-          <% end %>
-          <br> 
-          <p><span class="last-name"><%= @user.name %> </span> </p>
+
+            <div class="image__src" >
+              <% if @user.image? %>
+                    <%= image_tag @user.image, class: "profile_avatar rounded-circle" %> 
+                  <% else %>
+                    <%= image_tag "/assets/user.png", class: "profile_avatar rounded-circle" %> 
+              <% end %>
+            </div>
+          <span class="last-name"><%= @user.name %> </span>
             <span class="separator"></span>
-          <p><span class="email"><%= @user.email %> </span> </p>
+          <p><span class="email"><%= @user.email %> </span></p>
             <div class="actions">
-              <%= link_to 'Edit profile', edit_user_registration_path , class: "btn btn-edit-profile btn-block btn-outline" %>
+              <%= link_to 'Edit profile', edit_user_registration_path , class: "btn btn-secondary text-light btn-edit-profile" %>
             </div>
         </div>
       </section>
   </div>
+    <div class= "container">
+      <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Tasks</a>
+          <a class="nav-link" href="#">Kek1</a>
+          <a class="nav-link" href="#">Kek2</a>
+          <a class="nav-link disabled">Disabled</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </div>
+    
