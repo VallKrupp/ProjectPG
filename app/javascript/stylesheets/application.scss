@@ -21,6 +21,16 @@ body {
 
 a { text-decoration :none; }
 
+.Main_ObiVan_Hello{
+  height: 200px;
+  margin: 10px;
+  border: 2px solid #7c7c7c;
+}
+.Main_Project{
+  height: 260px;
+  margin: 10px;
+  border: 2px solid #7c7c7c;
+} 
 .row_centered{
 justify-content: center;
 }
@@ -231,7 +241,18 @@ input {
   width: 24px;
   float: left;
 }
-
+.col-1-2 {
+  width: 50%;  
+}
+.col-1-3 {
+  width: 33.3333333333%;
+}
+.col-1-4 {
+  width: 25%;
+}
+.col-2-3 {
+  width: 66.6666666667%;
+}  
 .remember{
   color: rgb(0, 0, 0);
   }
@@ -242,4 +263,3 @@ input {
   height: 20px;
   margin-right: 5px;
   }
-  
